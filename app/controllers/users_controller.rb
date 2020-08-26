@@ -12,7 +12,8 @@ class UsersController < ApplicationController
         if user && user.authenticate(params[:password])
         #log them in
         #creating session for the user actually logs them in. key value pais in the sessions hash
-        binding.pry
+        #logs them in 
+        session [:user_id] = user.id
         #redirect them to users profile
         else 
             #show an error message
