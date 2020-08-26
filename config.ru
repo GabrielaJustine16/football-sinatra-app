@@ -9,6 +9,6 @@ end
 #here is where i will mount other controlers with our keyword 'use'
 #in order to send PATCH and DELETE request i need
 
-#use Rack::MethodOverride
+use Rack::MethodOverride
 run ApplicationController
 use UsersController
