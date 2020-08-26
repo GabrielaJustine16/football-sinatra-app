@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 #render login form
-    get '/login' do
+    get "/login" do
         erb :login
     end
 
         #recieve the data. the params
-    post '/login' do 
+    post "/login" do 
         #find the user
         user = User.find_by(email: params[:email])
         #authenticate the user
@@ -13,8 +13,9 @@ class UsersController < ApplicationController
         #log them in
         #creating session for the user actually logs them in. key value pais in the sessions hash
         #logs them in 
-        session [:user_id] = user.id
+        session[:user_id] = user.id
         #redirect them to users profile
+        redirect "/users/#{user.id}"
         else 
             #show an error message
             redirect '/login'
@@ -22,5 +23,7 @@ class UsersController < ApplicationController
         
     end 
 
-
-end 
+        get "/users/:id" do 
+            "users show page"
+        end 
+    end 
