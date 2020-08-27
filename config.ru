@@ -10,5 +10,10 @@ end
 #in order to send PATCH and DELETE request i need
 
 use Rack::MethodOverride
-run ApplicationController
+
 use UsersController
+use PostsController
+#all controllers go in here, then you mount it
+
+
+run ApplicationController
