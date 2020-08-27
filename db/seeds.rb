@@ -1,3 +1,3 @@
-gabriela=User.create(email: "johnsongabriela12@gmail.com", name: "Gabriela" ,highlight_url: "https://youtu.be/4Ud3DjWfFxA", bio: "I was the number one running back of the 2019 season", password: "hellooo")
+gabriela=User.create(email: "johnsongabriela87@gmail.com", name: "Gabriela" ,highlight_url: "https://youtu.be/4Ud3DjWfFxA", bio: "I was the number one running back of the 2019 season", password: "16")
 
 Post.create(title: "Savage", highlight_url: "https://youtu.be/EAYZcMOi0yw", description: "Sacramento vs Portland. The game right before the sacramento team folded and we went to play for portland", user_id: gabriela.id  )
