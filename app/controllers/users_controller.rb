@@ -42,7 +42,17 @@ class UsersController < ApplicationController
 
 
         #post sign up route that rendures data from user create the user, and user id
+            session[:user_id] = @user.id 
+            redirect "/users/#{@user.id}"
 
-        #log out
+        
+    end 
+
+    #log out
         #get logout that clears the sesion
+        get '/logout' do 
+            session.clear 
+            #redirect to home landing page
+            redirect '/'
+        end 
     end 
