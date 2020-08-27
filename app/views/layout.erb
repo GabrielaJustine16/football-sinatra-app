@@ -16,6 +16,17 @@
   <body>
     <div class="wrapper">
 
+      <div class="nav">
+       <% if logged_in? %>
+         <a href="/">All Posts</a>
+          <a href="/">Create Posts</a>
+          <a href="/logout">Log Out</a>
+        <% end %>
+    </div>
+    
+    
+    
+
         <%= yield %>
 
       <footer class="branding">
