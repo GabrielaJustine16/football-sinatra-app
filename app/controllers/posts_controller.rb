@@ -13,8 +13,22 @@ class PostsController < ApplicationController
         erb :'posts/index'
 
     end 
+    #create
+    get "/posts/new" do 
+
+        erb :"posts/new"
+    end 
 
     #show route for a single post
+    #dynamic id-each post has an id, and we have to get from post page
+    #params is how we access id
+    get 'posts/:id' do 
+        #find the post
+        @post = Post.find(params[:id])
+        erb :"/posts/show"
+
+
+    end 
 
     #CREATE
 
