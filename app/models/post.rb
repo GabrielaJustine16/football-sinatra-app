@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-
     belongs_to :user
-    #relying on user id column
-end
+  
+    validates :title, presence: true
+    validates :description, presence: true
+    validates :image_url, presence: true
+  end

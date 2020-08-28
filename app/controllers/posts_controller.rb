@@ -14,23 +14,23 @@ class PostsController < ApplicationController
 
     end 
     #create
-    get "/posts/new" do 
+    get '/posts/new' do 
         redirect_if_not_logged_in
 
-        erb :'posts/new'
+        erb :'/posts/new'
     end 
 
     #post route for post 
     post "/posts" do 
 #recieve the params that the user put into the create form
     #active record method to create this post and eventually we nee d the user id. we will get it by leveraging
-        post = Post.new(title: params[:title], highlight_url: params[:highlight_url],desctription: params[:description],user_id: current_user.id )
+        @post = Post.new(title: params[:title], image_url: params[:image_url],description: params[:description],user_id: current_user.id )
         if @post.save
             flash[:message] = "Post created!"    
             
             
             #redirect to post show page 
-        redirect "/posts/#{post.id}"
+        redirect "/posts/#{@post.id}"
         #can be a plain ruby variable and we can leverage the id. we added the post= 
     else
         flash[:errors] = "Post creation failure: #{@post.errors.full_messages.to_sentence}"
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     #show route for a single post
     #dynamic id-each post has an id, and we have to get from post page
     #params is how we access id
-    get 'posts/:id' do 
+    get '/posts/:id' do 
         #find the post
         # id is coming from url - params
     find_post
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
     # patch route to update a existing post
   patch '/posts/:id' do
     find_post
-    @post.update(title: params[:title], highlight_url: params[:highlight_url], description: params[:description])
+    @post.update(title: params[:title], image_url: params[:image_url], description: params[:description])
     redirect "/posts/#{@post.id}"
   end
 

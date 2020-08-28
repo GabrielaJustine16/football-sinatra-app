@@ -14,15 +14,21 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+    
 
       <div class="nav">
        <% if logged_in? %>
-         <a href="/">All Posts</a>
-          <a href="/">Create Posts</a>
-          <a href="/logout">Log Out</a>
+         <a href="/logout">Logout</a>
+          <a href="/posts">All Posts</a>
+          <a href="/posts/new">Create Posts</a>
         <% end %>
     </div>
+    <div class="wrapper">
+     <% if flash[:message] %>
+        <h3 style="color:green;"><%= flash[:message] %></h3>
+      <% elsif flash[:errors] %>
+        <h3 style="color:red;"><%= flash[:errors] %></h3>
+      <% end %>
     
     
     

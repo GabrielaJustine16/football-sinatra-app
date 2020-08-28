@@ -9,6 +9,8 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     #set a sessions secret for an extra layer of security
     set :session_secret, "super_secret_session"
+    register Sinatra::Flash
+
   end
 
   get "/" do
