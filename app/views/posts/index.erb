@@ -3,3 +3,13 @@
 #@posts is an arra we can leverage here 
 
 
+<% @posts.each do |post|%>
+
+    <h4><a href= "/posts/<%= post.id %>"><%=post.title %></a></h4>
+    <video src=" <%= post.highlight_url %>"  alt="<%= post.title %>">
+<br><br>
+    <strong>Created at: <%= post.created_at %></strong>
+    <p><%= post.description%></p>
+    <p><%= post.user.name%></p>
+
+<% end %>
