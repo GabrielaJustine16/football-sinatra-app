@@ -1,4 +1,4 @@
-Concertz Sinatra Project
+Football Showcase Sinatra App
 Welcome to the Concertz web application! This is a demo app created using Sinatra and ActiveRecord. Football Showoff displays gallery of your favorite football photos with any information youd like to write about them in the description. An email and password id what you need to login or create an account.
 
 Installation
